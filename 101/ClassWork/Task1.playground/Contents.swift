@@ -21,7 +21,7 @@ struct Square: Shape {
 }
 
 struct Triangle: Shape {
-    var a, b, c: Int
+    var b: Int
     var height: Int
     
     func countS() -> Int {
