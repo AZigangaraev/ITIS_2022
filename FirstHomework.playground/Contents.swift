@@ -14,6 +14,7 @@ class Creature: founding {
         self.hp = hp
         self.mp = mp
         self.damage = damage
+        print("\(String(describing: type(of: self))) was born. His init: Name: \(self.name), HP: \(self.hp), MP: \(self.mp), Damage: \(self.damage).")
     }
     
     var defenceMultiplyer = Double.random(in: 0.5..<1)
@@ -47,14 +48,14 @@ protocol founding {
     func foundingItem(item: foundItem)
 }
 
-
 class Elf: Creature {
     override func attack(to enemy: Creature) {
         var mpMultiplyer = Double.random(in: 0.5..<1)
-        if isDied == false {
+        if enemy.hp > 0 {
             enemy.hp -= (damage + (mp*mpMultiplyer)) * defenceMultiplyer
             print("\(self.name) attaked \(enemy.name). His HP now: \(enemy.hp).")
         } else {
+            isDied = true
             print("\(enemy.name) already died.")
         }
     }
@@ -62,7 +63,7 @@ class Elf: Creature {
 
 class Human: Creature {
     override func attack(to enemy: Creature) {
-        if isDied == false {
+        if enemy.hp > 0 {
             if enemy.mp >= damage {
                 enemy.hp -= damage
                 print("\(self.name) attaked \(enemy.name). But \(enemy.name) couldn't repel the attack. His HP now: \(enemy.hp)")
@@ -71,6 +72,7 @@ class Human: Creature {
                 print("\(self.name) attaked \(enemy.name). His HP now: \(enemy.hp).")
             }
         } else {
+            isDied = true
             print("\(enemy.name) already died.")
         }
     }
@@ -78,18 +80,65 @@ class Human: Creature {
 
 class Monster: Creature {
     override func attack(to enemy: Creature) {
-        if isDied == false {
+        if enemy.hp > 0 {
             enemy.hp -= (damage + mp/2) * defenceMultiplyer
             print("\(self.name) attaked \(enemy.name). His HP now: \(enemy.hp).")
         } else {
+            isDied = true
             print("\(enemy.name) already died.")
         }
     }
 }
+/*Battle*/
+enum places {
+    case field
+    case forest
+    case hills
+}
 
-var elf = Elf(name: "Max", hp: 13, mp: 5, damage: 2)
-var human = Human(name: "Ivan", hp: 14, mp: 2, damage: 5)
-var monster = Monster(name: "Giena", hp: 12, mp: 2, damage: 3)
+class battlefield {
+    
+    func battleBegin(place: places) {
+        if place == .field {
+            var groupOfPeople: [Creature] = [Elf(name: "Noman", hp: 13, mp: 8, damage: 5), Human(name: "Trampsh", hp: 15, mp: 5, damage: 8)]
+            
+            var groupOfMonsters: [Monster] = [Monster(name: "Giena1", hp: 12, mp: 2, damage: 3), Monster(name: "Giena2", hp: 7, mp: 3, damage: 3), Monster(name: "Giena3", hp: 12, mp: 4, damage: 5)]
+            
+            for monster in groupOfMonsters {
+                for human in groupOfPeople {
+                    
+                    if monster.isDied == false {
+                        while monster.isDied == false {
+                            groupOfMonsters.randomElement()?.attack(to: groupOfPeople.randomElement()!)
+                            if human.hp <= 0 {
+                                human.isDied = true
+                                print("\(human.name) was killed by monsters.")
+                                break
+                            }
+                        }
+                        while human.isDied == false {
+                            groupOfPeople.randomElement()?.attack(to: groupOfMonsters.randomElement()!)
+                            if monster.hp <= 0 {
+                                monster.isDied = true
+                                print("\(monster.name) was killed by humans.")
+                                break
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
-human.attack(to: elf)
-elf.foundingItem(item: .rareItem)
+
+var world = battlefield()
+world.battleBegin(place: .field)
+
+
+//    var elf = Elf(name: "Mali", hp: 13, mp: 5, damage: 2)
+//    var human1 = Human(name: "Ivan", hp: 14, mp: 2, damage: 5)
+//    var human2 = Human(name: "Yanke", hp: 14, mp: 2, damage: 5)
+//    var monster1 = Monster(name: "Giena1", hp: 12, mp: 2, damage: 3)
+//    var monster2 = Monster(name: "Giena2", hp: 12, mp: 2, damage: 3)
+//    var monster3 = Monster(name: "Giena3", hp: 12, mp: 2, damage: 3)
