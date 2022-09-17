@@ -1,249 +1,208 @@
-import UIKit
+import Darwin
+import Foundation
 
-// Int, String, Bool, Double, Float
-// Set, Dictionary, Array
-// class, struct, enum, protocol, tuple, extension
-
-/*
-var a: Double = 0
-let b = a
-
-print(a)
-print(b)
-a += 1
-print(a)
-print(b)
-
-var myString = "Hello, world"
-print(myString)
-
-myString += " again"
-print(myString)
-
-a += 0.5
-
-var mySet: Set = [1, 2, 3]
-print(type(of: mySet))
-
-func myPrintBad(_ value: any Numeric) {
-    print(value)
+enum heroClasses{
+    case Archer
+    case Fighter
+    case Warlock
+    case Rogue
 }
 
-func myPrint<T: Numeric>(_ value: T) {
-    print(value)
+enum monstersClasses{
+    case Wolf
+    case Dragon
+    case Zombie
+    case Spider
+}
+protocol Hero {
+    var manaPoints: Double {get set}
+    var healthPoints: Double {get set}
+    var heroClass: heroClasses {get set}
+    var heroDamage: Double {get set}
 }
 
-myPrint(a)
-myPrint(1)
-
-class MyClass: Hashable {
-    init(name: String) {
-        self.name = name
-    }
-    let name: String
-    static var name: String = "MyClass.default"
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-        print(Self.name)
-    }
-
-    static func == (lhs: MyClass, rhs: MyClass) -> Bool {
-        lhs.name == rhs.name
-    }
+protocol Monster {
+    var id: Int {get set}
+    var healthPoints: Double {get set}
+    var manaPoints: Double {get set}
+    var monsterClass: monstersClasses {get set}
+    var monsterDamage: Double {get set}
 }
 
-var myArray: [Any] = ["", 1, 1.0, MyClass(name: "Hello")]
-print(myArray)
-
-var mySet2: Set<MyClass>
-
-let myClass1 = MyClass(name: "123")
-print("myClass1.name: \(myClass1.name)")
-print("MyClass.name: \(MyClass.name)")
-
-var myDictionary: [String: String] = [
-    "Hello": "World",
-    "room": "1412"
+class Archer: Hero{
+    var manaPoints: Double
+    var healthPoints: Double
+    var heroClass: heroClasses
+    var heroDamage: Double
+    var id: Int
+    init(){
+        self.id = Int.random(in: 1..<100)
+        self.healthPoints = 100.0
+        self.manaPoints = 80.0
+        self.heroDamage = 30.0
+        self.heroClass = .Archer
+    }
+}
+class Fighter: Hero{
+    var manaPoints: Double
+    var healthPoints: Double
+    var heroClass: heroClasses
+    var heroDamage: Double
+    var id: Int
+    init(){
+        self.id = Int.random(in: 1..<100)
+        self.healthPoints = 170.0
+        self.manaPoints = 50.0
+        self.heroDamage = 30.0
+        self.heroClass = .Fighter
+    }
+}
+class Rogue: Hero{
+    var manaPoints: Double
+    var healthPoints: Double
+    var heroClass: heroClasses
+    var heroDamage: Double
+    var id: Int
+    init(){
+        self.id = Int.random(in: 1..<100)
+        self.healthPoints = 120.0
+        self.manaPoints = 80.0
+        self.heroDamage = 20.0
+        self.heroClass = .Rogue
+    }
+}
+class Warlock: Hero{
+    var manaPoints: Double
+    var healthPoints: Double
+    var heroClass: heroClasses
+    var heroDamage: Double
+    var id: Int
+    init(){
+        self.id = Int.random(in: 1..<100)
+        self.healthPoints = 70.0
+        self.manaPoints = 110.0
+        self.heroDamage = 30.0
+        self.heroClass = .Warlock
+    }
+}
+class Wolf: Monster{
+    var id: Int
+    var healthPoints: Double
+    var manaPoints: Double
+    var monsterDamage: Double
+    var monsterClass: monstersClasses
+    init(){
+        self.id = Int.random(in: 1..<100)
+        self.healthPoints = 20.0
+        self.manaPoints = 10.0
+        self.monsterDamage = 5.0
+        self.monsterClass = .Wolf
+    }
+}
+    
+class Dragon: Monster{
+    var id: Int
+    var healthPoints: Double
+    var manaPoints: Double
+    var monsterDamage: Double
+    var monsterClass: monstersClasses
+    init(){
+        self.id = Int.random(in: 1..<100)
+        self.healthPoints = 50.0
+        self.manaPoints = 30.0
+        self.monsterDamage = 25.0
+        self.monsterClass = .Dragon
+    }
+}
+class Zombie: Monster{
+    var id: Int
+    var healthPoints: Double
+    var manaPoints: Double
+    var monsterDamage: Double
+    var monsterClass: monstersClasses
+    init(){
+        self.id = Int.random(in: 1..<100)
+        self.healthPoints = 40.0
+        self.manaPoints = 10.0
+        self.monsterDamage = 15.0
+        self.monsterClass = .Zombie
+    }
+}
+class Spider: Monster{
+    var id: Int
+    var healthPoints: Double
+    var manaPoints: Double
+    var monsterDamage: Double
+    var monsterClass: monstersClasses
+    init(){
+        self.id = Int.random(in: 1..<100)
+        self.healthPoints = 10.0
+        self.manaPoints = 10.0
+        self.monsterDamage = 5.0
+        self.monsterClass = .Spider
+    }
+}
+var Monsters: [Monster] = [
+    Spider(),
+    Zombie(),
+    Zombie(),
+    Wolf(),
+    Wolf(),
+    Dragon()
 ]
+func startingGame(){
 
-myDictionary["floor"] = "14"
-print(myDictionary)
-myDictionary["Hello"] = nil
-print(myDictionary)
-
-// inout
-
-func foo(taking bar: Int) {
+    let hero: [Hero] = [Warlock(), Rogue(), Fighter(), Archer()]
+    var randomHero = hero.randomElement()
+    print("Starting game. Your hero is \(randomHero!.heroClass). Your hp: \(randomHero!.healthPoints). Your mana: \(randomHero!.manaPoints). Your damage: \(randomHero!.heroDamage). Total enemies: \(Monsters.count).")
+    while (randomHero!.healthPoints > 0) && (Monsters.count > 0){
+        print("You have 3 roads to go: 1, 2, 3. It will be choosed randomly.")
+        let x = Int.random(in: 1..<4)
+        if x == 1{
+            print("Now we will have a fight with MONSTER")
+            fighting(hero: randomHero!)
+        }
+        if x == 2{
+            randomHero?.healthPoints += 50.0
+            print("Congratulations!!! You found a healing bottle. Your hp is increased to \(String(describing: randomHero!.healthPoints)).")
+        }
+        if x == 3{
+            randomHero?.healthPoints -= 20
+            print("Trap, your hp -20.")
+        }
+        if x == 4{
+            print("Oh no, there are two monsters!")
+            fighting(hero: randomHero!)
+            fighting(hero: randomHero!)
+        }
+    }
+    print("You win!")
+    exit(0)
 }
+func fighting(hero: Hero){
+    var heroo = hero
+    let monsterIndex = Monsters.indices.randomElement()!
+    var monsterr = Monsters[monsterIndex]
+    while (heroo.healthPoints > 0) && (monsterr.healthPoints > 0){
+        print("Your hp and mp: \(heroo.healthPoints), \(heroo.manaPoints), enemy's hp and mp: \(monsterr.healthPoints), \(monsterr.manaPoints).")
+        print("Enemy attacking")
+        heroo.healthPoints -= monsterr.monsterDamage
+        print("\(monsterr.monsterClass) deals \(monsterr.monsterDamage) to you.")
+        if heroo.healthPoints > 0{
+            print("Your attack")
+            monsterr.healthPoints -= heroo.heroDamage
+            print("\(monsterr.monsterClass) takes \(heroo.heroDamage) from you.")
+            if monsterr.healthPoints < 0{
+                print("Enemy dead")
+                Monsters.remove(at:monsterIndex)
+                }
+            }
+        else{
+            print("Game over")
+            exit(0)
+        }
 
-func foo() {
-}
-
-func foo(barBar: Int) -> Int {
-    print("Hello")
-    return barBar
-}
-
-func foo2(barBar: Int) -> Int {
-    barBar
-}
-
-func foo3() -> Int {
-    Int.random(in: 1...2)
-}
-
-func foo4(myString: inout String) {
-    myString += "Hello world"
-}
-
-func foo(myString: String) -> String {
-    myString + "Hello, world"
-}
-
-let myString2 = ""
-var myString3 = myString2
-foo4(myString: &myString3)
-print(myString2)
-print(foo(myString: ""))
-*/
-
-class Animal {
-    var numberOfLegs: Int { 4 }
-
-    func makeSound() {
-        if qrCode() < 500000 {
-            print("Yyyyyyiiiiiii")
         }
     }
 
-    private func qrCode() -> Int {
-        Int.random(in: 0...999999)
-    }
-}
-
-protocol Humanoid {
-    var hasFur: Bool { get }
-    var age: Int { get set }
-}
-
-class Human: Animal, Humanoid {
-    let hasFur: Bool = false
-    var age: Int = 0
-
-    var name: String = ""
-    override var numberOfLegs: Int { 2 }
-
-    override func makeSound() {
-//        super.makeSound()
-
-        print("Привет, I don't have \(super.numberOfLegs) legs, I have \(numberOfLegs) legs")
-    }
-}
-
-let human1 = Human()
-// Cannot assign to property: 'hasFur' is a 'let' constant
-// human1.hasFur = true
-print(human1.hasFur)
-
-let humanoid1: Humanoid = human1
-humanoid1.hasFur
-
-human1.makeSound()
-
-protocol MakingSound {
-    func makeSound()
-}
-
-struct MyParentStruct {
-}
-
-// Inheritance from non-protocol type 'MyParentStruct
-// struct MyStruct: MyParentStruct {
-struct MyStruct {
-    var name: String
-
-    var nameTwice: String {
-        name + name
-    }
-
-    func name(nTimes: Int) -> String {
-        var name = ""
-        for _ in 0..<nTimes {
-            name += self.name
-        }
-        return name
-    }
-
-    mutating func changeName(to newName: String) {
-        name = newName
-    }
-}
-
-let myClass1 = Human()
-let myClass2 = myClass1
-myClass1.name = "Aqle"
-print(myClass2.name)
-var myStruct1 = MyStruct(name: "myStruct1")
-var myStruct2 = myStruct1
-myStruct1.name = "123"
-print(myStruct2.name)
-
-let myStruct3 = MyStruct(name: "123")
-print(myStruct3.name(nTimes: 3))
-var myStruct4 = MyStruct(name: "123")
-print(myStruct4.name)
-myStruct4.changeName(to: "234")
-print(myStruct4.name)
-
-var myTuple: (String, Int) = ("Amir", 123)
-var myTupleWithLabels: (name: String, age: Int) = ("Amir", 111)
-myTuple.0
-myTuple.1
-myTupleWithLabels.name
-myTupleWithLabels.age
-
-myTupleWithLabels = myTuple
-
-// Closures
-
-var printNameAndAge: (String, Int) -> Void
-printNameAndAge = {
-    print("\($0), age: \($1)")
-}
-
-printNameAndAge = { name, age in
-    var printedTimes: Int = 0
-    func updatePrintedTimes() {
-        printedTimes += 1
-    }
-    print("\(name), age: \(age)")
-    updatePrintedTimes()
-}
-
-class MyPrinter {
-    var printer: (String, Int) -> Void = { _, _ in }
-
-    func print(string: String, int: Int) {
-        printer(string, int)
-    }
-}
-
-printNameAndAge("Hello", 1)
-printNameAndAge("Hello", 1)
-let myPrinter = MyPrinter()
-myPrinter.printer = printNameAndAge
-printNameAndAge = myPrinter.printer
-printNameAndAge("Hello", 1)
-printNameAndAge("Hello", 1)
-myPrinter.print(string: "A", int: 123)
-myPrinter.print(string: "A", int: 123)
-myPrinter.print(string: "A", int: 123)
-
-let myView = UIView()
-extension UIView: MakingSound {
-    func makeSound() {
-        print("UIView goes brrrrr")
-    }
-}
-myView.makeSound()
+startingGame()
