@@ -197,4 +197,4 @@ class battlefield {
 }
 
 var world = battlefield()
-world.battleBegin(place: .hills)
+world.battleBegin(place: .forest)
