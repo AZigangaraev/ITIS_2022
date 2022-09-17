@@ -51,7 +51,7 @@ protocol founding {
 class Elf: Creature {
     override func attack(to enemy: Creature) {
         var mpMultiplyer = Double.random(in: 0.5..<1)
-        if enemy.hp > 0 {
+        if enemy.hp > 0 && hp > 0 {
             enemy.hp -= (damage + (mp*mpMultiplyer)) * defenceMultiplyer
             print("\(self.name) attaked \(enemy.name). His HP now: \(enemy.hp).")
         } else {
@@ -63,7 +63,7 @@ class Elf: Creature {
 
 class Human: Creature {
     override func attack(to enemy: Creature) {
-        if enemy.hp > 0 {
+        if enemy.hp > 0 && hp > 0 {
             if enemy.mp >= damage {
                 enemy.hp -= damage
                 print("\(self.name) attaked \(enemy.name). But \(enemy.name) couldn't repel the attack. His HP now: \(enemy.hp)")
@@ -80,7 +80,7 @@ class Human: Creature {
 
 class Monster: Creature {
     override func attack(to enemy: Creature) {
-        if enemy.hp > 0 {
+        if enemy.hp > 0 && hp > 0 {
             enemy.hp -= (damage + mp/2) * defenceMultiplyer
             print("\(self.name) attaked \(enemy.name). His HP now: \(enemy.hp).")
         } else {
@@ -97,27 +97,28 @@ enum places {
 }
 
 class battlefield {
+    var groupOfPeople: [Creature] = [Elf(name: "Noman", hp: 13, mp: 8, damage: 5), Human(name: "Trampsh", hp: 15, mp: 5, damage: 8)]
     
     func battleBegin(place: places) {
         if place == .field {
-            var groupOfPeople: [Creature] = [Elf(name: "Noman", hp: 13, mp: 8, damage: 5), Human(name: "Trampsh", hp: 15, mp: 5, damage: 8)]
             
             var groupOfMonsters: [Monster] = [Monster(name: "Giena1", hp: 12, mp: 2, damage: 3), Monster(name: "Giena2", hp: 7, mp: 3, damage: 3), Monster(name: "Giena3", hp: 12, mp: 4, damage: 5)]
             
             for monster in groupOfMonsters {
                 for human in groupOfPeople {
-                    
-                    if monster.isDied == false {
-                        while monster.isDied == false {
-                            groupOfMonsters.randomElement()?.attack(to: groupOfPeople.randomElement()!)
+                    if monster.hp > 0 {
+                        while monster.hp > 0 {
+                            groupOfMonsters.randomElement()?.attack(to: human)
                             if human.hp <= 0 {
                                 human.isDied = true
                                 print("\(human.name) was killed by monsters.")
                                 break
                             }
                         }
-                        while human.isDied == false {
-                            groupOfPeople.randomElement()?.attack(to: groupOfMonsters.randomElement()!)
+                    }
+                    if human.hp > 0 {
+                        while human.hp > 0 {
+                            groupOfPeople.randomElement()?.attack(to: monster)
                             if monster.hp <= 0 {
                                 monster.isDied = true
                                 print("\(monster.name) was killed by humans.")
@@ -128,17 +129,72 @@ class battlefield {
                 }
             }
         }
+        if place == .forest {
+            
+            var groupOfMonsters: [Monster] = [Monster(name: "Giena1", hp: 12, mp: 2, damage: 3), Monster(name: "Giena2", hp: 7, mp: 3, damage: 3), Monster(name: "Giena3", hp: 12, mp: 4, damage: 5), Monster(name: "Giena4", hp: 5, mp: 4, damage: 5)]
+            
+            groupOfPeople.randomElement()?.foundingItem(item: .rareItem)
+            
+            for monster in groupOfMonsters {
+                for human in groupOfPeople {
+                    
+                    if human.hp > 0 {
+                        while human.hp > 0 {
+                            groupOfPeople.randomElement()?.attack(to: monster)
+                            if monster.hp <= 0 {
+                                monster.isDied = true
+                                print("\(monster.name) was killed by humans.")
+                                break
+                            }
+                        }
+                    }
+                    if monster.hp > 0 {
+                        while monster.hp > 0 {
+                            groupOfMonsters.randomElement()?.attack(to: human)
+                            if human.hp <= 0 {
+                                human.isDied = true
+                                print("\(human.name) was killed by monsters.")
+                                break
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if place == .hills {
+            
+            var groupOfMonsters: [Monster] = [Monster(name: "Giena1", hp: 12, mp: 2, damage: 3), Monster(name: "Giena2", hp: 7, mp: 3, damage: 3), Monster(name: "Giena3", hp: 12, mp: 4, damage: 5), Monster(name: "Giena4", hp: 5, mp: 4, damage: 5), Monster(name: "Giena5", hp: 5, mp: 4, damage: 5), Monster(name: "Giena6", hp: 5, mp: 4, damage: 5)]
+            
+            groupOfPeople.randomElement()?.foundingItem(item: .rareItem)
+            
+            for monster in groupOfMonsters {
+                for human in groupOfPeople {
+                    
+                    if human.hp > 0 {
+                        while human.hp > 0 {
+                            groupOfPeople.randomElement()?.attack(to: monster)
+                            if monster.hp <= 0 {
+                                monster.isDied = true
+                                print("\(monster.name) was killed by humans.")
+                                break
+                            }
+                        }
+                    }
+                    if monster.hp > 0 {
+                        while monster.hp > 0 {
+                            groupOfMonsters.randomElement()?.attack(to: human)
+                            if human.hp <= 0 {
+                                human.isDied = true
+                                print("\(human.name) was killed by monsters.")
+                                break
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
-
 var world = battlefield()
-world.battleBegin(place: .field)
-
-
-//    var elf = Elf(name: "Mali", hp: 13, mp: 5, damage: 2)
-//    var human1 = Human(name: "Ivan", hp: 14, mp: 2, damage: 5)
-//    var human2 = Human(name: "Yanke", hp: 14, mp: 2, damage: 5)
-//    var monster1 = Monster(name: "Giena1", hp: 12, mp: 2, damage: 3)
-//    var monster2 = Monster(name: "Giena2", hp: 12, mp: 2, damage: 3)
-//    var monster3 = Monster(name: "Giena3", hp: 12, mp: 2, damage: 3)
+world.battleBegin(place: .hills)
