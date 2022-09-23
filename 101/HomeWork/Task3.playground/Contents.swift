@@ -201,7 +201,7 @@ func startGame() {
                     switch (enemy.characterClass, e.characterClass) {
                         // if the player is fighting with the monster
                     case (.hero, .zombie):
-                        if zombie.HP == 0 {
+                        if zombie.HP <= 0 {
                             kickFromGame(enemy: zombie, enemies: &enemies)
                             print("\n[\(zombie.characterName)] I'm at 0 HP, so I'm dead!\n")
                         } else {
@@ -214,7 +214,7 @@ func startGame() {
                         }
                         
                     case (.hero, .spider):
-                        if spider.HP == 0 {
+                        if spider.HP <= 0 {
                             kickFromGame(enemy: spider, enemies: &enemies)
                             print("\n[\(spider.characterName)] I'm at 0 HP, so I'm dead!\n")
                         } else {
@@ -227,7 +227,7 @@ func startGame() {
                         }
                         
                     case (.zombie, .hero):
-                        if hero1.HP == 0 {
+                        if hero1.HP <= 0 {
                             kickFromGame(enemy: hero1, enemies: &enemies)
                             print("Monsters have a win!")
                             exit(0)
@@ -240,7 +240,7 @@ func startGame() {
                         }
                         
                     case (.spider, .hero):
-                        if hero1.HP == 0 {
+                        if hero1.HP <= 0 {
                             kickFromGame(enemy: hero1, enemies: &enemies)
                             print("Monsters have a win!")
                             exit(0)
