@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  hw3
+//  3
 //
-//  Created by Meiers on 29.09.2022.
+//  Created by Meiers on 30.09.2022.
 //
 
 import UIKit
