@@ -10,10 +10,13 @@ class ViewController: UIViewController {
         myView.backgroundColor = .red
         view.addSubview(myView)
         view.backgroundColor =  .purple
-        myView.addSubview(label)
+        //myView.addSubview(label)
         label.layer.position = .zero
         label.textAlignment = .center
         label.text = "Продам соль"
+        
+        label.frame = CGRect(x: 50, y: 230, width: 200, height: 20)
+        myView.addSubview(label)
         keyFrameAnimation(for: myView)
         
         
