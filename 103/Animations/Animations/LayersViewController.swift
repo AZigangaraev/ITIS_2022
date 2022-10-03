@@ -18,7 +18,7 @@ class LayersViewController: UIViewController {
             object: nil
         )
     }
-
+    
     @objc func reanimate() {
         animate()
     }
