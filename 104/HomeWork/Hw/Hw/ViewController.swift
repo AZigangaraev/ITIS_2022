@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBAction func logInButton(_ sender: Any) {
         if loginTextField.text == "Maksim" && passwordTextField.text == "Qwerty123"{
             let tabVC = (storyboard?.instantiateViewController(withIdentifier: "TabBarViewController"))!
+            tabVC.modalPresentationStyle = .fullScreen
             navigationController?.present(tabVC, animated: true)
             //navigationController?.pushViewController(tabVC, animated: true)
         }else{

@@ -102,10 +102,28 @@
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="hwG-fL-bL6">
                         <color key="badgeColor" systemColor="labelColor"/>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" id="IVz-PO-SMz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1H-XL-eUe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1606.8702290076335" y="-296.47887323943661"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="uwJ-f0-w3c">
+            <objects>
+                <navigationController id="SSI-jS-VaC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Q2E-qU-1kj"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l1e-E4-DJv">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="M0J-SX-5Qh" kind="relationship" relationship="rootViewController" id="fNE-8l-E7R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pwa-YG-qus" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="859" y="-918"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="srU-rj-Zrp">
@@ -130,6 +148,7 @@
                             <constraint firstItem="kiw-13-HwH" firstAttribute="centerX" secondItem="1jA-WP-ZrU" secondAttribute="centerX" id="kuv-S8-Bdh"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="7Fu-ay-cGX"/>
                     <connections>
                         <outlet property="infoLabel" destination="kiw-13-HwH" id="rWq-uV-RFu"/>
                     </connections>
@@ -182,7 +201,7 @@
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="M0J-SX-5Qh" kind="relationship" relationship="viewControllers" id="8p3-XI-YdB"/>
+                        <segue destination="SSI-jS-VaC" kind="relationship" relationship="viewControllers" id="uyh-GL-sSf"/>
                         <segue destination="XlH-nI-9qK" kind="relationship" relationship="viewControllers" id="7RF-hx-BGL"/>
                     </connections>
                 </tabBarController>

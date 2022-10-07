@@ -12,7 +12,8 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var infoLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        infoLabel.text = "Catalog, Page: \(navigationController?.viewControllers.count ?? 0)"
+        var count = (navigationController?.viewControllers.count ?? 0) + 1
+        infoLabel.text = "Catalog, Page: \(count)"
         // Do any additional setup after loading the view.
     }
 
