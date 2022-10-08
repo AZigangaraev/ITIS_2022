@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -104,7 +103,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="xtR-CB-x1f">
                         <imageReference key="image" image="house.fill" catalog="system" symbolScale="large"/>
-                        <color key="badgeColor" systemColor="systemRedColor"/>
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="0gt-LG-ZBs"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -252,7 +251,10 @@
                         <viewLayoutGuide key="safeArea" id="Hll-7U-Aki"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Exit" selectedImage="door.left.hand.closed" catalog="system" id="kd4-o0-Ivu"/>
+                    <tabBarItem key="tabBarItem" title="Exit" image="arrow.uturn.backward.square.fill" catalog="system" id="kd4-o0-Ivu">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <imageReference key="selectedImage" image="arrow.uturn.backward.square.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7M-bZ-3Xb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -281,7 +283,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="e4F-ge-bUs">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="NXW-9Z-rvw" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="NXW-9Z-rvw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E2K-ze-xPn">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -290,8 +292,8 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="urY-Sl-3DR" kind="relationship" relationship="viewControllers" id="nrW-1a-wKG"/>
                         <segue destination="VZE-ZV-7dP" kind="relationship" relationship="viewControllers" id="IjL-jF-EGD"/>
+                        <segue destination="urY-Sl-3DR" kind="relationship" relationship="viewControllers" id="nrW-1a-wKG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1b5-S0-Gsp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -301,10 +303,7 @@
     </scenes>
     <resources>
         <image name="1" width="512" height="512"/>
-        <image name="door.left.hand.closed" catalog="system" width="108" height="128"/>
+        <image name="arrow.uturn.backward.square.fill" catalog="system" width="128" height="114"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

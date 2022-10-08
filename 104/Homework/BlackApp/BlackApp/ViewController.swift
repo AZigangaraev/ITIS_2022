@@ -29,11 +29,11 @@ class ViewController: UIViewController {
             )
             present(alert, animated: true)
         } else {
-            let secondVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SecondViewController")
 
-            navigationController?.pushViewController(secondVC, animated: true)
-//            secondVC.modalPresentationStyle = .fullScreen
-//            navigationController?.present(secondVC, animated: true)
+            let tabbarVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "TabBarViewController")
+
+            tabbarVC.modalPresentationStyle = .fullScreen
+            navigationController?.present(tabbarVC, animated: true)
         }
     }
 

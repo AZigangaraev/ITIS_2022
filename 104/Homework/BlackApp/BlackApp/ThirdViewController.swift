@@ -26,7 +26,7 @@ class ThirdViewController: UIViewController {
         pageNumberLabel.text = "Catalog. Page \( (navigationController?.viewControllers.count ?? 3) - 2)"
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(
-            title: "Close", style: .plain, target: self,
+            title: "Back", style: .plain, target: self,
             action: #selector(backTap))
     }
 }
