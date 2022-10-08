@@ -9,12 +9,11 @@ import UIKit
 
 class ExitViewController: UIViewController {
 
-    var username = ""
     @IBOutlet var greetingLabel: UILabel!
     @IBOutlet var SignOutButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        greetingLabel.text = "Hello, \(username)"
+        greetingLabel.text = "Hello, \(UserDefaults.standard.string(forKey: "username") ?? " ")"
     }
     
     @IBAction func signOutButtonDidTap(_ sender: Any) {

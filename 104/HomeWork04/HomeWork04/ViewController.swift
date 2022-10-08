@@ -26,6 +26,7 @@ class ViewController: UIViewController {
             guard let tabBarViewController = storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") as? UITabBarController else { return }
             tabBarViewController.modalPresentationStyle = .fullScreen
             present(tabBarViewController, animated: true, completion: nil)
+            UserDefaults.standard.set(yourUsername, forKey: "username")
         } else {
             let alert = UIAlertController(title: "Wrong username or password", message: "", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))

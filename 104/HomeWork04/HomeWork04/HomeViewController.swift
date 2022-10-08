@@ -9,14 +9,13 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    var username = ""
     @IBOutlet var greetingLabel: UILabel!
     @IBOutlet var browseCatalogButton: UIButton!
     @IBOutlet var animalImagesButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        greetingLabel.text = "Hello, \(username)"
+        greetingLabel.text = "Hello, \(UserDefaults.standard.string(forKey: "username") ?? " ")"
     }
     
     @IBAction func browseCatalogButtonDidTap(_ sender: Any) {
