@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XzX-Mk-xeJ">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Exit-->
+        <scene sceneID="Fke-Qj-Lkt">
+            <objects>
+                <viewController storyboardIdentifier="ExitViewController" id="XlH-nI-9qK" customClass="ExitViewController" customModule="Hw" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TqS-h0-IcR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLa-Vg-9Mh">
+                                <rect key="frame" x="147" y="493" width="99" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign out"/>
+                                <connections>
+                                    <action selector="s:" destination="lU8-LU-eCv" eventType="touchUpInside" id="QoE-SC-Ol5"/>
+                                    <action selector="signOutButton:" destination="XlH-nI-9qK" eventType="touchUpInside" id="JrC-9X-Vym"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WK-AM-Kni">
+                                <rect key="frame" x="176" y="341" width="41.333333333333343" height="20.333333333333314"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1au-e3-qhv"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Exit" image="door.left.hand.open" catalog="system" selectedImage="door.left.hand.open" id="aXy-LY-HbT">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="nameLabel" destination="6WK-AM-Kni" id="1Ac-ix-BZB"/>
+                        <outlet property="signOutButton" destination="jLa-Vg-9Mh" id="ktL-te-GbB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jua-qi-Cqm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="lU8-LU-eCv" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1606.8702290076335" y="459.85915492957747"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="v1N-5Z-qaY">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="M0J-SX-5Qh" customClass="HomeViewController" customModule="Hw" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AeA-Cj-Rbg">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7h-lf-KEw">
+                                <rect key="frame" x="129" y="193" width="140.66666666666669" height="34.333333333333314"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Browse catalog"/>
+                                <connections>
+                                    <action selector="browseButton:" destination="M0J-SX-5Qh" eventType="touchUpInside" id="0VB-vI-mpm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9u-9d-z2F">
+                                <rect key="frame" x="129" y="616" width="134.66666666666663" height="34.333333333333371"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Animal images"/>
+                                <connections>
+                                    <action selector="animalButton:" destination="M0J-SX-5Qh" eventType="touchUpInside" id="d7E-zG-dLQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="h2s-6S-zJR"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="hwG-fL-bL6">
+                        <color key="badgeColor" systemColor="labelColor"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="IVz-PO-SMz"/>
+                    <connections>
+                        <outlet property="animalImageButton" destination="z9u-9d-z2F" id="11q-Dh-7PA"/>
+                        <outlet property="browseButton" destination="l7h-lf-KEw" id="byt-Xm-cX2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S1H-XL-eUe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1606.8702290076335" y="-296.47887323943661"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="uwJ-f0-w3c">
+            <objects>
+                <navigationController id="SSI-jS-VaC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Q2E-qU-1kj"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l1e-E4-DJv">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="M0J-SX-5Qh" kind="relationship" relationship="rootViewController" id="fNE-8l-E7R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pwa-YG-qus" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="859" y="-918"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="srU-rj-Zrp">
+            <objects>
+                <viewController storyboardIdentifier="InfoViewController" id="NFl-lC-aWV" customClass="InfoViewController" customModule="Hw" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1jA-WP-ZrU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiw-13-HwH">
+                                <rect key="frame" x="175.66666666666666" y="415.66666666666669" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8Rr-fn-dcU"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7Fu-ay-cGX"/>
+                    <connections>
+                        <outlet property="infoLabel" destination="kiw-13-HwH" id="rWq-uV-RFu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yai-dD-uth" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2411" y="-665"/>
+        </scene>
+        <!--Img View Controller-->
+        <scene sceneID="XdZ-0H-rNm">
+            <objects>
+                <viewController storyboardIdentifier="ImgViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fom-ya-zEL" customClass="ImgViewController" customModule="Hw" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gQN-Yg-RYZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JVi-bM-08K">
+                                <rect key="frame" x="16" y="178" width="361" height="496"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JrF-j5-OZC"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JVi-bM-08K" firstAttribute="top" secondItem="JrF-j5-OZC" secondAttribute="top" constant="119" id="7ca-yq-E3b"/>
+                            <constraint firstItem="JVi-bM-08K" firstAttribute="leading" secondItem="gQN-Yg-RYZ" secondAttribute="leadingMargin" id="BlP-Mq-PRa"/>
+                            <constraint firstItem="JVi-bM-08K" firstAttribute="centerX" secondItem="gQN-Yg-RYZ" secondAttribute="centerX" id="asR-gh-ecC"/>
+                            <constraint firstItem="JVi-bM-08K" firstAttribute="centerY" secondItem="gQN-Yg-RYZ" secondAttribute="centerY" id="moT-q6-Ckj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Img" destination="JVi-bM-08K" id="p8z-5b-slf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tTp-3O-mIG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2409.9236641221373" y="-9.1549295774647899"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="kNL-jK-xUn">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="csA-ZV-FM5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="EpV-wT-vtB"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ea7-8H-qnw">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="SSI-jS-VaC" kind="relationship" relationship="viewControllers" id="uyh-GL-sSf"/>
+                        <segue destination="XlH-nI-9qK" kind="relationship" relationship="viewControllers" id="7RF-hx-BGL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jbH-ag-K01" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="859" y="-29"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="ko5-fX-xr1">
+            <objects>
+                <navigationController id="XzX-Mk-xeJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ZiJ-bO-xBP"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ynY-tl-wlC">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hEU-A9-mzP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I2L-EZ-sxH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-709" y="-29"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hw" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6V-gg-boT">
+                                <rect key="frame" x="30" y="353" width="333" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L63-y4-wy2">
+                                <rect key="frame" x="30" y="409" width="333" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qb5-XA-oLJ">
+                                <rect key="frame" x="161" y="451" width="70" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log in"/>
+                                <connections>
+                                    <action selector="logInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wzJ-aj-h3G"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                        <color key="tintColor" systemColor="labelColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2wU-cC-UQI"/>
+                    <connections>
+                        <outlet property="logInButton" destination="Qb5-XA-oLJ" id="MLk-ud-ZoD"/>
+                        <outlet property="loginTextField" destination="j6V-gg-boT" id="Rwm-Jw-Cbq"/>
+                        <outlet property="passwordTextField" destination="L63-y4-wy2" id="Kzo-uM-Kzr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.76923076923077" y="-28.436018957345969"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="door.left.hand.open" catalog="system" width="108" height="128"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
