@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FourthViewController: UIViewController {
+class AnimalImagesViewController: UIViewController {
 
     @IBOutlet var animalImage: UIImageView!
     @IBOutlet var animalImageLabel: UILabel!

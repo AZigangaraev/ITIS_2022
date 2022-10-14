@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class CatalogViewController: UIViewController {
 
     @IBOutlet private var pageNumberLabel: UILabel!
     @IBOutlet var browseCatalogButton: UIButton!
@@ -17,14 +17,14 @@ class ThirdViewController: UIViewController {
     }
 
     @IBAction private func browseCatalogButtonDidTap() {
-        let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ThirdViewController")
-        navigationController?.pushViewController(nextVC, animated: true)
+        let catalogVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "CatalogViewController")
+        navigationController?.pushViewController(catalogVC, animated: true)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        pageNumberLabel.text = "Catalog. Page \( (navigationController?.viewControllers.count ?? 3) - 2)"
+        pageNumberLabel.text = "Catalog. Page \( (navigationController?.viewControllers.count ?? 3) - 1)"
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Back", style: .plain, target: self,

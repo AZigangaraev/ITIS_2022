@@ -11,7 +11,7 @@
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="BlackApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="BlackApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +57,7 @@
         <!--Home-->
         <scene sceneID="TC4-ih-GZk">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" id="lem-5B-g3v" customClass="SecondViewController" customModule="BlackApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="lem-5B-g3v" customClass="ProfileViewController" customModule="BlackApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mk7-Nx-ngR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,10 +134,10 @@
             </objects>
             <point key="canvasLocation" x="-286" y="4"/>
         </scene>
-        <!--Third View Controller-->
+        <!--Catalog View Controller-->
         <scene sceneID="1cp-VZ-cz5">
             <objects>
-                <viewController storyboardIdentifier="ThirdViewController" id="8i8-Dr-iE4" customClass="ThirdViewController" customModule="BlackApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CatalogViewController" id="8i8-Dr-iE4" customClass="CatalogViewController" customModule="BlackApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wB8-ii-Ovh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="1793" y="4"/>
         </scene>
-        <!--Fourth View Controller-->
+        <!--Animal Images View Controller-->
         <scene sceneID="YYv-Tn-Fil">
             <objects>
-                <viewController storyboardIdentifier="FourthViewController" id="n14-fy-MDv" customClass="FourthViewController" customModule="BlackApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnimalImagesViewController" id="n14-fy-MDv" customClass="AnimalImagesViewController" customModule="BlackApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cri-fa-HlS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,7 +221,7 @@
         <!--Exit-->
         <scene sceneID="idJ-qE-j9o">
             <objects>
-                <viewController storyboardIdentifier="FifthViewController" id="urY-Sl-3DR" customClass="FifthViewController" customModule="BlackApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignOutViewController" id="urY-Sl-3DR" customClass="SignOutViewController" customModule="BlackApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vXm-Ba-N00">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

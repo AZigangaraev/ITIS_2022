@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FifthViewController: UIViewController {
+class SignOutViewController: UIViewController {
 
     @IBOutlet var helloLabel: UILabel!
     @IBOutlet var signOutButton: UIButton!

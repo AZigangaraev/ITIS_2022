@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     private let userName: String = "test"
     private let password: String = "1234"
@@ -40,12 +40,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
         setupStackViewsAndContraints()
-    }
-
-    func getUserName() -> String {
-        self.userName
     }
 
     private func setupStackViewsAndContraints() {
@@ -57,12 +52,6 @@ class ViewController: UIViewController {
         stackView.spacing = 10
         stackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stackView)
-
-//        // 1 способ добавления в StackView
-//        let submitButton = UIButton(type: .system)
-//        submitButton.setTitle("Submit", for: .normal)
-//        stackView.addArrangedSubview(submitButton)
-
         signInButton.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([

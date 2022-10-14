@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     @IBOutlet var helloLabel: UILabel!
 
@@ -21,15 +21,15 @@ class SecondViewController: UIViewController {
     }
 
     @IBAction private func browseCatalogButtonDidTap() {
-        let thirdVC = (storyboard?.instantiateViewController(withIdentifier: "ThirdViewController"))!
+        let catalogVC = (storyboard?.instantiateViewController(withIdentifier: "CatalogViewController"))!
 
-        navigationController?.pushViewController(thirdVC, animated: true)
+        navigationController?.pushViewController(catalogVC, animated: true)
     }
 
     @IBAction private func animalImagesButtonDidTap() {
-        let fourthVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "FourthViewController")
+        let animalImagesVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "AnimalImagesViewController")
 
-        present(fourthVC, animated: true)
+        present(animalImagesVC, animated: true)
     }
 
 
