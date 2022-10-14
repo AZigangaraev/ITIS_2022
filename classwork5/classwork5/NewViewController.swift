@@ -45,7 +45,7 @@ class NewViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             pageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
-            pageLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -300),
+            pageLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             browseButton.topAnchor.constraint(equalTo: pageLabel.bottomAnchor, constant: 30),
             browseButton.centerXAnchor.constraint(equalTo: pageLabel.centerXAnchor, constant: 0),
             browseButton.widthAnchor.constraint(equalToConstant: 246),

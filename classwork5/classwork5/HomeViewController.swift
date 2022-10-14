@@ -67,10 +67,7 @@ class HomeViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             helloLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
-            helloLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -300)
-        ])
-        
-        NSLayoutConstraint.activate([
+            helloLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             stackview.topAnchor.constraint(equalTo: helloLabel.bottomAnchor, constant: 30),
             stackview.centerXAnchor.constraint(equalTo: helloLabel.centerXAnchor, constant: 0),
             stackview.widthAnchor.constraint(equalToConstant: 246),

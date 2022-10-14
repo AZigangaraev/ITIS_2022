@@ -46,7 +46,7 @@ class ExitViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             helloLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
-            helloLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -300),
+            helloLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             signOutButton.topAnchor.constraint(equalTo: helloLabel.bottomAnchor, constant: 30),
             signOutButton.centerXAnchor.constraint(equalTo: helloLabel.centerXAnchor, constant: 0),
             signOutButton.widthAnchor.constraint(equalToConstant: 246),

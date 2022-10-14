@@ -45,7 +45,7 @@ class CatsViewController: UIViewController {
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            closeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -170),
+            closeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
             catImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
             catImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0),
             catImageView.widthAnchor.constraint(equalToConstant: 370),
