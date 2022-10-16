@@ -17,7 +17,7 @@ class CatalogViewController: UIViewController {
     }
 
     @IBAction private func browseCatalogButtonDidTap() {
-        let catalogVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "CatalogViewController")
+        let catalogVC: CatalogViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "CatalogViewController")
         navigationController?.pushViewController(catalogVC, animated: true)
     }
 
