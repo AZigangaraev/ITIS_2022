@@ -74,7 +74,7 @@ class CatalogTableViewController: UIViewController, UITableViewDataSource, UITab
             }
             
             var config = UIListContentConfiguration.valueCell()
-            config.text = "Type: \(armor.type)"
+            config.text = "\(armor.type)"
             config.textProperties.font = .monospacedDigitSystemFont(ofSize: 15, weight: .bold)
             config.image = armor.equipImage
             config.imageProperties.maximumSize = CGSize(width: 60, height: 60)

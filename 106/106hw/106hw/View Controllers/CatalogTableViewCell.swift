@@ -28,7 +28,7 @@ class CatalogTableViewCell: UITableViewCell {
     private let equipImage: UIImageView = .init()
     
     func set(equipment: Equipment) {
-        typeLabel.text = "Type: \(equipment.type)"
+        typeLabel.text = "\(equipment.type)"
         rarityLabel.text = "Rarity: \(equipment.rarity)"
         enduranceLabel.text = "Endurance: \(equipment.endurance)"
         powerLabel.text = "Power: \(equipment.power)"
@@ -90,7 +90,7 @@ class CatalogTableViewCell: UITableViewCell {
             ),
             descriptionStackView.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
-                constant: 250
+                constant: 220
             ),
             
             equipImage.leadingAnchor.constraint(
