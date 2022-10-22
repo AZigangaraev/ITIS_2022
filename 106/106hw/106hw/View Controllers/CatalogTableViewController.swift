@@ -15,8 +15,6 @@ class CatalogTableViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     private let tableView: UITableView = .init(frame: .zero, style: .insetGrouped)
-    
-    
     private func setup() {
         
         view.backgroundColor = .white
@@ -82,16 +80,15 @@ class CatalogTableViewController: UIViewController, UITableViewDataSource, UITab
             config.imageProperties.maximumSize = CGSize(width: 60, height: 60)
             
             if (armor.power.contains("best")) {
-                config.prefersSideBySideTextAndSecondaryText = false
                 config.secondaryText = "Protection: \(armor.power)"
                 config.secondaryTextProperties.font = .systemFont(ofSize: 12)
 
             }
-            
             cell.contentConfiguration = config
             cell.backgroundColor = .clear
             return cell
         }
+        
         let weapon = weaponSection[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: CellIdentifier.weapon.rawValue
@@ -143,4 +140,3 @@ class CatalogTableViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
 }
-
